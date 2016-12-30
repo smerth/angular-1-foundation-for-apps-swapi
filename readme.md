@@ -1,35 +1,23 @@
+# Angular 1 Foundation For Apps SWAPI Viewer
 
+This Angular 1 app is built on Foundation for Apps ( [docs](http://foundation.zurb.com/apps/docs/#!/), [code](https://github.com/zurb/foundation-apps).)
 
-# Foundation for Apps Template
+The app consumes the [SWAPI](https://swapi.co) feed for Star Wars data.
 
-[![devDependency Status](https://david-dm.org/zurb/foundation-apps-template/dev-status.svg)](https://david-dm.org/zurb/foundation-apps-template#info=devDependencies)
+The original code is pieced together from [Smashing Magazine](https://www.smashingmagazine.com/2015/04/creating-web-app-in-foundation-for-apps/) and [xyz-angular-swapi](https://github.com/unshift-devs/xyz-angular-swapi) and [SWAPI-Wrapper](https://github.com/cfjedimaster/SWAPI-Wrapper)
 
-This is the default template project for Foundation for Apps, powered by Gulp, Angular, and libsass. It provides you with a basic template to get started with Foundation for Apps and Angular.
+## Installation
 
-If you're already an Angular developer, you may instead want to install the components into your own stack using Bower: `bower install foundation-apps`
-
-## Requirements
-
-You'll need the following software installed to get started.
-
-  - [Node.js](http://nodejs.org): Use the installer for your OS.
-  - [Git](http://git-scm.com/downloads): Use the installer for your OS.
-    - Windows users can also try [Git for Windows](http://git-for-windows.github.io/).
-  - [Gulp](http://gulpjs.com/) and [Bower](http://bower.io): Run `npm install -g gulp bower`
-    - Depending on how Node is configured on your machine, you may need to run `sudo npm install -g gulp bower` instead, if you get an error with the first command.
-
-## Get Started
-
-Clone this repository, where `app` is the name of your app.
+Clone this repository (and give it a new name if needed)
 
 ```bash
-git clone https://github.com/zurb/foundation-apps-template.git app
+git clone https://github.com/smerth/angular-1-foundation-for-apps-swapi.git <new-app-name>
 ```
 
 Change into the directory.
 
 ```bash
-cd app
+cd <new-app-name>
 ```
 
 Install the dependencies. If you're running Mac OS or Linux, you may need to run `sudo npm install` instead, depending on how your machine is configured.
@@ -50,11 +38,18 @@ To serve the site and watch for changes during development
 npm start
 ```
 
-Problem with gh-pages
+## Deploy to gh-pages
 
-For debugging:
-
-```bash
-npm start build && git add . && git commit -m "debugging gh-pages issues" && git push && gulp deploy && npm start
+To deploy to gh-pages uncomment the line 
+```html
+<!--<base href="/<YOUR-GITHUB-REPO-NAME>/#/" target="_blank">-->
 ```
+then run 
+```bash
+gulp deloy
+```
+To develop locally comment the line out again.
 
+## Caveats
+
+Currently the app only works in Chrome, due to a CORS issue on Safari and Firefox.  See [this issue](http://stackoverflow.com/questions/25727306/request-header-field-access-control-allow-headers-is-not-allowed-by-access-contr) to investigate a fix.
