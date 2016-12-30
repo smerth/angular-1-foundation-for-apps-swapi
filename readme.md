@@ -53,3 +53,5 @@ To develop locally comment the line out again.
 ## Caveats
 
 Currently the app only works in Chrome, due to a CORS issue on Safari and Firefox.  See [this issue](http://stackoverflow.com/questions/25727306/request-header-field-access-control-allow-headers-is-not-allowed-by-access-contr) to investigate a fix.
+
+Everything works on localhost but doesn't work on gh-pages...
