@@ -78,8 +78,7 @@
       return (!!input) ? input.split('/').slice(-2, -1)[0] : '';
     }
   })
-    .config(config)
-    .run(run)
+
 
 // This attempt to fix CORS issue on Safari and Firefox doesn't work...
     .config(function($httpProvider) {
